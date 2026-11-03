@@ -1,0 +1,30 @@
+{
+  "name": "slidev-theme-storybook",
+  "version": "0.1.0",
+  "type": "module",
+  "keywords": [
+    "slidev-theme",
+    "slidev",
+    "storybook"
+  ],
+  "engines": {
+    "node": ">=18",
+    "slidev": ">=0.50.0"
+  },
+  "slidev": {
+    "colorSchema": "both",
+    "defaults": {
+      "fonts": {
+        "sans": "Nunito Sans",
+        "weights": "400,600,700,800,900"
+      }
+    }
+  },
+  "files": [
+    "assets",
+    "components",
+    "layouts",
+    "styles",
+    "global-bottom.vue"
+  ]
+}
