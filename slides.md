@@ -568,7 +568,7 @@ Works with Storybook 11<br/><code>@storybook/vite-plugin</code>
 </SBCallout>
 
 <SBCallout title="Next from Labs">
-Storybook devtools
+Vitest Plugin Sveltekit
 </SBCallout>
 
 </div>
