@@ -44,7 +44,7 @@ layout: intro
 # Working on a feature as a frontend dev
 
 <!--
-[1:00 · 15s] Set the scene: you're building a component, you want to see it in the app AND in isolation.
+[1:00 · 15s] Before joining chromatic and the sb team -> workign at leetchi as frontend lead
 -->
 
 ---
@@ -83,7 +83,7 @@ $ npm run storybook
 - Two ports, two browser tabs
 
 <!--
-[1:15 · 45s] Two commands, two processes, two ports. Everyone in the room has done this.
+[1:15 · 45s] My issue
 -->
 
 ---
@@ -93,7 +93,7 @@ layout: statement
 # What if Storybook ran in the dev server <SBGradientText>you already started?</SBGradientText>
 
 <!--
-[2:45 · 15s] Transition.
+[2:45 · 15s]
 -->
 
 ---
@@ -121,7 +121,7 @@ Storybook as a Vite plugin
 </div>
 
 <!--
-[3:00 · 1:00] Frame it: this is where we try things. "Here's the first one."
+[3:00 · 1:00]
 -->
 
 ---
@@ -172,7 +172,7 @@ export default defineConfig({
 </div>
 
 <!--
-[5:00 · 45s] Say it out loud: vite build is unaffected, nothing from Storybook ships in your app — the plugin doesn't even activate.
+[5:00 · 45s]
 -->
 
 ---
@@ -190,7 +190,10 @@ layout: intro
 3. Open localhost:5173/__storybook → Storybook
 4. Edit a component → HMR in both
 5. LEAVE IT RUNNING — we come back to it for SB 11
-Backup: recorded video in case of trouble.
+
+
+PROMPT : 
+run `npx storybook skills ui-workflow, follow the isntructions strictly and Add dietary tags to the restaurant menu in mealdrop.
 -->
 
 ---
@@ -216,8 +219,7 @@ Backup: recorded video in case of trouble.
 </div>
 
 <!--
-[8:15 · 45s] Storybook is mounted as middleware on your dev server. Same port, same lifecycle.
-The preview still runs its own Vite instance (own HMR socket at /__storybook-hmr) — it's the same Storybook as before, just mounted.
+[8:15 · 45s]
 -->
 
 ---
@@ -288,7 +290,7 @@ Same port, <SBGradientText>whatever your dev server</SBGradientText>
 - Angular: `ng serve` doesn't load a Vite config → a dev-server builder instead. Needs @angular/build 21 and @storybook/angular-vite
 - Next.js: no dev-server plugin API → a custom server replaces `next dev` (`"dev": "node server.mjs"`). Needs @storybook/nextjs-vite. Existing custom server? `createStorybookMiddleware`
 - Nuxt works too in the labs examples (via a local module)
-TODO: release the Angular / Next.js adapters (pending changesets after 0.1.0) before the talk.
+
 -->
 
 ---
@@ -308,7 +310,7 @@ TODO: release the Angular / Next.js adapters (pending changesets after 0.1.0) be
 </div>
 
 <!--
-[9:30 · 30s] Bridge to the second half.
+[9:30 · 30s] 
 -->
 
 ---
@@ -318,7 +320,7 @@ layout: full
 <img src="./theme/assets/sb-11/sb_11.png" class="absolute inset-0 h-full w-full object-contain" />
 
 <!--
-[10:00 · 15s] Section opener.
+[10:00 · 15s] 
 -->
 
 ---
@@ -333,9 +335,7 @@ layout: full
 <ant-design-robot-filled v-drag="[299,383,54,60]" />
 
 <!--
-[10:15 · 30s] Ported from ZurichJS — reposition icons with v-drag if the theme differs.
-Your agent needs the same thing you do: a place to see and test components.
-(Trimmed to 30s to make room for the benchmark slide.)
+[10:15 · 30s] inner and outer loop description
 -->
 
 ---
@@ -425,7 +425,7 @@ Attaches to your running Storybook
 - `storybook upgrade` and `create storybook` install the skills and add the AGENTS.md section (BEGIN/END:storybook-skills markers)
 - `storybook ai` from SB 10 is gone → `storybook skills setup` / `storybook tools`
 - CLI default mode: attaches to a running instance, otherwise loads the config locally (--attach / --no-attach)
-TODO: confirm `npx storybook tools --attach docs list` attaches to the plugin-hosted Storybook (the plugin writes the instance registry since labs #11).
+
 -->
 
 ---
@@ -435,7 +435,7 @@ layout: intro
 #### `/storybook:ui-workflow Add dietary tags to the restaurant menu in mealdrop.`
 
 <!--
-[13:15 · 15s] The prompt.
+[13:15 · 15s] The prompt. Go back to the meal drop demo
 -->
 
 ---
@@ -477,14 +477,11 @@ More content ≠ better: <b>focused docs</b> were ~⅓ faster and 17–23% cheap
 <SourceNote>Storybook agentic reference benchmark · MealDrop + Droppy design system · Claude Opus 5 (high) · 5 tasks × 10 runs × 13 configurations</SourceNote>
 
 <!--
-[10:45 · 45s] Same app as the demo! Say "in our benchmark", never "Storybook makes agents 23% faster".
+[10:45 · 45s] "in our benchmark"
 - 23% faster: UI rework −41%, a11y fixes −30%, new UI −18%
 - ~10% cheaper (9.6%); input tokens −18%, output −11%
 - About 9 Storybook lookups per run replaced codebase exploration (−34%) → 12% fewer tool calls
 - New UI: 160–210 fewer lines, ~3 fewer files → smaller PRs to review
-- Click: the fullest Storybook (all docs + many stories + docgen) was no better than none. Focused "starter docs" (description, anatomy, minimal example): −32 to −35% time, −17 to −23% cost
-Caveats (say briefly): one app, one model/effort, agent instructed to call the MCP at least once; measured MCP, not the new skills/CLI.
-TODO: confirm with Steve / DX that these numbers are cleared for a public talk (the guide draft is marked internal).
 -->
 
 ---
@@ -524,7 +521,7 @@ npx storybook automigrate
 </SBWindow>
 
 <!--
-[15:30 · 45s] TODO: replace the output with a real 10 → 11 run.
+[15:30 · 45s]
 Automigrations: `skills` installs the skills + AGENTS.md section; `docgen-server` renames the flag (now stable, on by default); review and change detection are always on, so their flags get removed.
 Breaking changes:
 - Test runner support ended → move to the Vitest addon
@@ -554,7 +551,6 @@ $ pnpm dev
 
 <!--
 [16:15 · 30s] Callback to slide "Starting 2 terminals": app, Storybook and your agent — one process.
-TODO: match the real console output.
 -->
 
 ---
